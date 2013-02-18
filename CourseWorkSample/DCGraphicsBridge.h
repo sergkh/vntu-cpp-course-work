@@ -1,7 +1,7 @@
 #pragma once
 #include "graphics.h"
 
-// Реалізація функцій малювання для CPaintDC
+// Р РµР°Р»С–Р·Р°С†С–СЏ С„СѓРЅРєС†С–Р№ РјР°Р»СЋРІР°РЅРЅСЏ РґР»СЏ CPaintDC
 class CDCGraphicsBridge: public graphics::GraphicsBridge
 {
 public:
