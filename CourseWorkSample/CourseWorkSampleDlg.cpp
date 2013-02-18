@@ -99,8 +99,6 @@ BOOL CCourseWorkSampleDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
-
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -117,10 +115,10 @@ void CCourseWorkSampleDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// Викликається кожен раз, коли вікно необхідно перемалювати, наприклад 
-// при зміні розмірів вікна, звертанні, зміни області перекриття вікон.
-// Все малювання має відбуватись в рамках цього методу, інакше при будь-якій
-// з вищеописаних операцій графіка буде затерта.
+// Р’РёРєР»РёРєР°С”С‚СЊСЃСЏ РєРѕР¶РµРЅ СЂР°Р·, РєРѕР»Рё РІС–РєРЅРѕ РЅРµРѕР±С…С–РґРЅРѕ РїРµСЂРµРјР°Р»СЋРІР°С‚Рё, РЅР°РїСЂРёРєР»Р°Рґ 
+// РїСЂРё Р·РјС–РЅС– СЂРѕР·РјС–СЂС–РІ РІС–РєРЅР°, Р·РІРµСЂС‚Р°РЅРЅС–, Р·РјС–РЅРё РѕР±Р»Р°СЃС‚С– РїРµСЂРµРєСЂРёС‚С‚СЏ РІС–РєРѕРЅ.
+// Р’СЃРµ РјР°Р»СЋРІР°РЅРЅСЏ РјР°С” РІС–РґР±СѓРІР°С‚РёСЃСЊ РІ СЂР°РјРєР°С… С†СЊРѕРіРѕ РјРµС‚РѕРґСѓ, С–РЅР°РєС€Рµ РїСЂРё Р±СѓРґСЊ-СЏРєС–Р№
+// Р· РІРёС‰РµРѕРїРёСЃР°РЅРёС… РѕРїРµСЂР°С†С–Р№ РіСЂР°С„С–РєР° Р±СѓРґРµ Р·Р°С‚РµСЂС‚Р°.
 void CCourseWorkSampleDlg::OnPaint()
 {
 	if (IsIconic())
@@ -144,7 +142,7 @@ void CCourseWorkSampleDlg::OnPaint()
 	{
 		CPaintDC dc(this); // device context for painting
 
-		// Відобразити фігури (якщо задачу вже вирішено)
+		// Р’С–РґРѕР±СЂР°Р·РёС‚Рё С„С–РіСѓСЂРё (СЏРєС‰Рѕ Р·Р°РґР°С‡Сѓ РІР¶Рµ РІРёСЂС–С€РµРЅРѕ)
 		solver.draw(CDCGraphicsBridge(dc));
 
 		CDialog::OnPaint();
@@ -158,7 +156,6 @@ HCURSOR CCourseWorkSampleDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-// Викликається при виборі пункту меню
 void CCourseWorkSampleDlg::OnSolve()
 {
 	solver.readData(_T("test.txt"));
@@ -166,7 +163,7 @@ void CCourseWorkSampleDlg::OnSolve()
 	
 	SetDlgItemTextW(IDC_STATIC_RES, solver.getResultText());
 
-	// змусити вікно перемалювати себе
+	// РїРµСЂРµРјР°Р»СЋРІР°С‚Рё РІС–РєРЅРѕ
 	Invalidate();
 }
 
